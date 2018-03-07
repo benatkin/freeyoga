@@ -1,37 +1,63 @@
-import {Component} from 'react'
-import {withStyles} from 'material-ui/styles'
-import Link from 'next/link'
-import Head from '../components/head'
+import React from 'react';
+import PropTypes from 'prop-types';
 import Reboot from 'material-ui/Reboot'
 import AppBar from 'material-ui/AppBar'
 import Toolbar from 'material-ui/Toolbar'
-import Typography from 'material-ui/Typography'
 import IconButton from 'material-ui/IconButton'
 import MenuIcon from 'material-ui-icons/Menu'
-import Button from 'material-ui/Button'
+import Button from 'material-ui/Button';
+import Dialog, {
+  DialogTitle,
+  DialogContent,
+  DialogContentText,
+  DialogActions,
+} from 'material-ui/Dialog';
+import Typography from 'material-ui/Typography';
+import { withStyles } from 'material-ui/styles';
+import withRoot from '../src/withRoot';
 
-const styles = {
+const styles = theme => ({
+  root: {
+    textAlign: 'center'
+  },
   content: {
     padding: '10px'
   }
-}
+});
 
-class Home extends Component {
+class Index extends React.Component {
+  state = {
+    open: false,
+  };
+
+  handleClose = () => {
+    this.setState({
+      open: false,
+    });
+  };
+
+  handleClick = () => {
+    this.setState({
+      open: true,
+    });
+  };
+
   render() {
-    const {classes} = this.props
+    const { classes } = this.props;
+    const { open } = this.state;
+
     return (
-      <div>
-        <Head title="Home" />
+      <div className={classes.root}>
         <Reboot />
 
-        <AppBar position="static">
-          <Toolbar>
-            <IconButton color="inherit" aria-label="Menu">
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="title" color="inherit">
-              Free Yoga
-            </Typography>
+          <AppBar position="static">
+            <Toolbar>
+              <IconButton color="inherit" aria-label="Menu">
+                <MenuIcon />
+              </IconButton>
+              <Typography variant="title" color="inherit">
+                Free Yoga
+                </Typography>
           </Toolbar>
         </AppBar>
 
@@ -40,9 +66,34 @@ class Home extends Component {
             Hello World
           </Button>
         </div>
+
+        <Dialog open={open} onClose={this.handleClose}>
+          <DialogTitle>Super Secret Password</DialogTitle>
+          <DialogContent>
+            <DialogContentText>1-2-3-4-5</DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button color="primary" onClick={this.handleClose}>
+              OK
+            </Button>
+          </DialogActions>
+        </Dialog>
+        <Typography variant="display1" gutterBottom>
+          Material-UI
+        </Typography>
+        <Typography variant="subheading" gutterBottom>
+          example project
+        </Typography>
+        <Button variant="raised" color="secondary" onClick={this.handleClick}>
+          Super Secret Password
+        </Button>
       </div>
-    )
+    );
   }
 }
 
-export default withStyles(styles)(Home)
+Index.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withRoot(withStyles(styles)(Index));
