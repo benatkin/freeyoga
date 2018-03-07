@@ -1,10 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
+import MenuIcon from 'material-ui-icons/Menu'
+import AddBoxIcon from 'material-ui-icons/AddBox'
+import ClockIcon from 'material-ui-icons/Schedule'
+import LocationIcon from 'material-ui-icons/Map'
+import PersonIcon from 'material-ui-icons/Person'
+
 import Reboot from 'material-ui/Reboot'
 import AppBar from 'material-ui/AppBar'
+import Drawer from 'material-ui/Drawer'
 import Toolbar from 'material-ui/Toolbar'
 import IconButton from 'material-ui/IconButton'
-import MenuIcon from 'material-ui-icons/Menu'
 import Button from 'material-ui/Button';
 import Dialog, {
   DialogTitle,
@@ -12,81 +19,133 @@ import Dialog, {
   DialogContentText,
   DialogActions,
 } from 'material-ui/Dialog';
+import Paper from 'material-ui/Paper'
+//import Card from 'material-ui/Card'
 import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 import withRoot from '../src/withRoot';
+import Link from 'next/link';
 
 const styles = theme => ({
   root: {
-    textAlign: 'center'
   },
   content: {
-    padding: '10px'
+    padding: '10px',
+  },
+  event: {
+    padding: '10px',
+    marginBottom: '10px',
+  },
+  leftIcon: {
+    marginRight: theme.spacing.unit,
+  },
+  property: {
+    marginBottom: '5px',
+  },
+  propertyIcon: {
+    marginBottom: '-6px',
+  },
+  drawer: {
+    padding: '20px',
+  },
+  drawerMenuItem: {
+
   }
 });
 
 class Index extends React.Component {
   state = {
-    open: false,
+    drawerOpen: false,
   };
 
-  handleClose = () => {
-    this.setState({
-      open: false,
-    });
-  };
-
-  handleClick = () => {
-    this.setState({
-      open: true,
-    });
-  };
+  toggleDrawer = drawerOpen => () => {
+    this.setState({drawerOpen});
+  }
 
   render() {
     const { classes } = this.props;
-    const { open } = this.state;
 
     return (
       <div className={classes.root}>
         <Reboot />
 
-          <AppBar position="static">
-            <Toolbar>
-              <IconButton color="inherit" aria-label="Menu">
-                <MenuIcon />
-              </IconButton>
-              <Typography variant="title" color="inherit">
-                Free Yoga
-                </Typography>
+        <Drawer open={this.state.drawerOpen} onClose={this.toggleDrawer(false)}>
+          <div
+            tabIndex={0}
+            role="button"
+            onClick={this.toggleDrawer(false)}
+            onKeyDown={this.toggleDrawer(false)}
+            className={classes.drawer}
+          >
+            <Link href="/schedule">
+              <Typography variant="Title" className={classes.drawerMenuItem}>Schedule</Typography>
+            </Link>
+            <Link href="/about">
+              <Typography variant="Title" className={classes.drawerMenuItem}>About</Typography>
+            </Link>
+            <Button variant="raised" color="secondary">
+              <AddBoxIcon className={classes.leftIcon} />
+              Create Event
+            </Button>
+          </div>
+        </Drawer>
+
+        <AppBar position="static">
+          <Toolbar>
+            <IconButton color="inherit" aria-label="Menu" onClick={this.toggleDrawer(true)}>
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="title" color="inherit">
+              Free Yoga
+            </Typography>
           </Toolbar>
         </AppBar>
 
         <div className={classes.content}>
-          <Button variant="raised" color="primary">
-            Hello World
-          </Button>
-        </div>
+          <Paper className={classes.event}>
+            <Typography className={classes.date} variant="body1">
+              Wednesday, March 7, 2018
+            </Typography>
+            <Typography variant="title" style={{paddingBottom: '5px'}}>Free Yoga at SF's Best Coworking Space - The Vault</Typography>
+            <Typography className={classes.property} variant="body1">
+              <ClockIcon className={classes.propertyIcon} /> 12:00 PM
+            </Typography>
+            <Typography className={classes.property} variant="body1">
+              <LocationIcon className={classes.propertyIcon} /> The Vault
+            </Typography>
+            <Typography className={classes.property} variant="body1">
+              <PersonIcon className={classes.propertyIcon} /> Matthew
+            </Typography>
+            <Link href="https://www.meetup.com/Free-Yoga-SF/events/zqxxnnyxfbkb/">
+              <Button variant="raised" color="secondary">
+                <AddBoxIcon className={classes.leftIcon} />
+                Attend
+              </Button>
+            </Link>
+          </Paper>
 
-        <Dialog open={open} onClose={this.handleClose}>
-          <DialogTitle>Super Secret Password</DialogTitle>
-          <DialogContent>
-            <DialogContentText>1-2-3-4-5</DialogContentText>
-          </DialogContent>
-          <DialogActions>
-            <Button color="primary" onClick={this.handleClose}>
-              OK
-            </Button>
-          </DialogActions>
-        </Dialog>
-        <Typography variant="display1" gutterBottom>
-          Material-UI
-        </Typography>
-        <Typography variant="subheading" gutterBottom>
-          example project
-        </Typography>
-        <Button variant="raised" color="secondary" onClick={this.handleClick}>
-          Super Secret Password
-        </Button>
+          <Paper className={classes.event}>
+            <Typography className={classes.date} variant="body1">
+              Saturday, March 10, 2018
+            </Typography>
+            <Typography variant="title" style={{paddingBottom: '5px'}}>Gratitude in the Park - Donation Yoga Flow</Typography>
+            <Typography className={classes.property} variant="body1">
+              <ClockIcon className={classes.propertyIcon} /> 10:45 AM to 12:00 PM
+            </Typography>
+            <Typography className={classes.property} variant="body1">
+              <LocationIcon className={classes.propertyIcon} /> Conservatory of Flowers
+            </Typography>
+            <Typography className={classes.property} variant="body1">
+              <PersonIcon className={classes.propertyIcon} /> Rachel Jennine Goudey
+            </Typography>
+            <Link href="https://www.meetup.com/Free-Yoga-SF/events/zqxxnnyxfbkb/">
+              <Button variant="raised" color="secondary">
+                <AddBoxIcon className={classes.leftIcon} />
+                Attend
+              </Button>
+            </Link>
+          </Paper>
+        </div>
       </div>
     );
   }
