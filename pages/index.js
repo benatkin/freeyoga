@@ -119,28 +119,6 @@ class Index extends React.Component {
           <Grid item xs={12} md={6} className={classes.dividerLeft}>
             <Paper className={classes.event}>
               <Typography className={classes.date} variant="body1">
-                Wednesday, March 7, 2018
-              </Typography>
-              <Typography variant="title" style={{paddingBottom: '5px'}}>Free Yoga at SF's Best Coworking Space - The Vault</Typography>
-              <Typography className={classes.property} variant="body1">
-                <ClockIcon className={classes.propertyIcon} /> 12:00 PM
-              </Typography>
-              <Typography className={classes.property} variant="body1">
-                <LocationIcon className={classes.propertyIcon} /> The Vault
-              </Typography>
-              <Typography className={classes.property} variant="body1">
-                <PersonIcon className={classes.propertyIcon} /> Matthew
-              </Typography>
-              <Link href="https://www.meetup.com/Free-Yoga-SF/events/zqxxnnyxfbkb/">
-                <Button variant="raised" color="secondary">
-                  <AddBoxIcon className={classes.leftIcon} />
-                  Attend
-                </Button>
-              </Link>
-            </Paper>
-
-            <Paper className={classes.event}>
-              <Typography className={classes.date} variant="body1">
                 Saturday, March 10, 2018
               </Typography>
               <Typography variant="title" style={{paddingBottom: '5px'}}>Gratitude in the Park - Donation Yoga Flow</Typography>
