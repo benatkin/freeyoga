@@ -30,15 +30,18 @@ class Nav extends React.Component {
           onKeyDown={this.toggleDrawer(false)}
           className={classes.drawer}
         >
+          <Link href="/">
+            <Typography variant="Title" className={classes.drawerMenuItem}>Home</Typography>
+          </Link>
           <Link href="/schedule">
             <Typography variant="Title" className={classes.drawerMenuItem}>Schedule</Typography>
           </Link>
           <Link href="/about">
             <Typography variant="Title" className={classes.drawerMenuItem}>About</Typography>
           </Link>
-          <Button variant="raised" color="secondary">
+          <Button variant="raised" color="secondary" href="mailto:community@freeyoga.fit">
             <AddBoxIcon className={classes.leftIcon} />
-            Create Event
+            Suggest Event
           </Button>
         </div>
       </Drawer>),

@@ -21,7 +21,10 @@ export default (theme) => ({
     padding: '20px',
   },
   drawerMenuItem: {
-
+    cursor: 'pointer',
+    color: theme.palette.primary.main,
+    fontSize: '120%',
+    paddingBottom: theme.spacing.unit * 0.5
   },
   dividerRight: {
     [theme.breakpoints.up('md')]: {
