@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 
 import MenuIcon from 'material-ui-icons/Menu';
 import AddBoxIcon from 'material-ui-icons/AddBox';
-import ClockIcon from 'material-ui-icons/Schedule';
-import LocationIcon from 'material-ui-icons/Map';
-import PersonIcon from 'material-ui-icons/Person';
 
 import Reboot from 'material-ui/Reboot';
 import AppBar from 'material-ui/AppBar';
@@ -26,6 +23,8 @@ import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 import withRoot from '../src/withRoot';
 import Link from 'next/link';
+
+import YogaEvent from '../components/yoga-event'
 
 const styles = theme => ({
   root: {
@@ -117,25 +116,15 @@ class Index extends React.Component {
             <img src="/static/images/photo1.png" style={{width: '100%'}} />
           </Grid>
           <Grid item xs={12} md={6} className={classes.dividerLeft}>
-            <Paper className={classes.event}>
-              <Typography className={classes.date} variant="body1">
-                Saturday, March 10, 2018
-              </Typography>
-              <Typography variant="title" style={{paddingBottom: '5px'}}>Gratitude in the Park - Donation Yoga Flow</Typography>
-              <Typography className={classes.property} variant="body1">
-                <ClockIcon className={classes.propertyIcon} /> 10:45 AM to 12:00 PM
-              </Typography>
-              <Typography className={classes.property} variant="body1">
-                <LocationIcon className={classes.propertyIcon} /> Conservatory of Flowers
-              </Typography>
-              <Typography className={classes.property} variant="body1">
-                <PersonIcon className={classes.propertyIcon} /> Rachel Jennine Goudey
-              </Typography>
-              <Button variant="raised" color="secondary" href="https://www.meetup.com/Free-Yoga-SF/events/bmdskpyxfbnb/">
-                <AddBoxIcon className={classes.leftIcon} />
-                Attend
-              </Button>
-            </Paper>
+            <YogaEvent
+              classes={classes} 
+              date="Saturday, March 10, 2018"
+              title="Gratitude in the Park - Donation Yoga Flow"
+              time="10:45 AM to 12:00 PM"
+              location="Conservatory of Flowers"
+              instructor="Rachel Jennine Goudey"
+              url="https://www.meetup.com/Free-Yoga-SF/events/bmdskpyxfbnb/"
+            />
           </Grid>
         </Grid>
       </div>
