@@ -39,10 +39,6 @@ class Nav extends React.Component {
           <Link href="/about">
             <Typography variant="Title" className={classes.drawerMenuItem}>About</Typography>
           </Link>
-          <Button variant="raised" color="secondary" href="mailto:freeyogasf@gmail.com">
-            <AddBoxIcon className={classes.leftIcon} />
-            Suggest Event
-          </Button>
         </div>
       </Drawer>),
       (<AppBar position="static">
