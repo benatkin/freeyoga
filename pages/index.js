@@ -9,11 +9,14 @@ import withRoot from '../src/withRoot';
 import globalStyles from '../src/global-styles';
 import Link from 'next/link';
 
-import YogaEvent from '../components/yoga-event'
+import YogaEvent from '../components/yoga-event';
+
+const allEvents = require('../data/events');
 
 class Index extends React.Component {
   render() {
     const { classes } = this.props;
+    const events = allEvents.filter(event => event.featured);
 
     return (
       <div className={classes.root}>
@@ -26,15 +29,14 @@ class Index extends React.Component {
             <img src="/static/images/photo1.png" style={{width: '100%'}} />
           </Grid>
           <Grid item xs={12} md={6} className={classes.dividerLeft}>
-            <YogaEvent
-              classes={classes} 
-              date="Saturday, March 10, 2018"
-              title="Gratitude in the Park - Donation Yoga Flow"
-              time="10:45 AM to 12:00 PM"
-              location="Conservatory of Flowers"
-              instructor="Rachel Jennine Goudey"
-              url="https://www.meetup.com/Free-Yoga-SF/events/bmdskpyxfbnb/"
-            />
+            {
+              events.map(event => (
+                <YogaEvent
+                  classes={classes}
+                  {...event}
+                />
+              ))
+            }
           </Grid>
         </Grid>
       </div>

@@ -9,11 +9,14 @@ import withRoot from '../src/withRoot';
 import globalStyles from '../src/global-styles';
 import Link from 'next/link';
 
-import YogaEvent from '../components/yoga-event'
+import YogaEvent from '../components/yoga-event';
+
+const allEvents = require('../data/events');
 
 class Schedule extends React.Component {
   render() {
     const { classes } = this.props;
+    const events = allEvents;
 
     return (
       <div className={classes.root}>
@@ -22,17 +25,16 @@ class Schedule extends React.Component {
         <Nav classes={classes} />
 
         <Grid container className={classes.content} spacing={0}>
-          <Grid item xs={12} md={6} className={classes.dividerLeft}>
-            <YogaEvent
-              classes={classes} 
-              date="Saturday, March 10, 2018"
-              title="Gratitude in the Park - Donation Yoga Flow"
-              time="10:45 AM to 12:00 PM"
-              location="Conservatory of Flowers"
-              instructor="Rachel Jennine Goudey"
-              url="https://www.meetup.com/Free-Yoga-SF/events/bmdskpyxfbnb/"
-            />
-          </Grid>
+          {
+            events.map((event, i) => (
+              <Grid item xs={12} md={6} className={i % 2 == 0 ? classes.dividerRight : classes.dividerLeft}>
+                <YogaEvent
+                  classes={classes}
+                  {...event}
+                />
+              </Grid>
+            ))
+          }
         </Grid>
       </div>
     );
