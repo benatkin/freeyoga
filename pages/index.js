@@ -1,19 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import Nav from '../components/nav'
 
-import MenuIcon from 'material-ui-icons/Menu';
-import AddBoxIcon from 'material-ui-icons/AddBox';
-
 import Reboot from 'material-ui/Reboot';
-import AppBar from 'material-ui/AppBar';
 import Grid from 'material-ui/Grid';
-import Drawer from 'material-ui/Drawer';
-import IconButton from 'material-ui/IconButton';
-import Button from 'material-ui/Button';
-import Paper from 'material-ui/Paper';
-import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 import withRoot from '../src/withRoot';
 import globalStyles from '../src/global-styles';
@@ -51,9 +41,5 @@ class Index extends React.Component {
     );
   }
 }
-
-Index.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
 export default withRoot(withStyles(globalStyles)(Index));
