@@ -1,60 +1,59 @@
-import Head from './head'
-import Link from 'next/link'
+import MenuIcon from 'material-ui-icons/Menu';
+import AddBoxIcon from 'material-ui-icons/AddBox';
 
-const links = [
-  { href: 'https://github.com/segmentio/create-next-app', label: 'Github' }
-].map(link => {
-  link.key = `nav-link-${link.href}-${link.label}`
-  return link
-})
+import AppBar from 'material-ui/AppBar';
+import Drawer from 'material-ui/Drawer';
+import Toolbar from 'material-ui/Toolbar';
+import IconButton from 'material-ui/IconButton';
+import Button from 'material-ui/Button';
+import Paper from 'material-ui/Paper';
+import Typography from 'material-ui/Typography';
+import Link from 'next/link';
 
-const Nav = () => (
-  <nav>
-    <ul>
-      <li>
-        <Link prefetch href="/">
-          <a>Home</a>
-        </Link>
-      </li>
-      <ul>
-        {links.map(
-          ({ key, href, label }) => (
-            <li key={key}>
-              <Link href={href}>
-                <a>{label}</a>
-              </Link>
-            </li>
-          )
-        )}
-      </ul>
-    </ul>
+class Nav extends React.Component {
+  state = {
+    drawerOpen: false,
+  };
 
-    <style jsx>{`
-      :global(body) {
-        margin: 0;
-        font-family: -apple-system,BlinkMacSystemFont,Avenir Next,Avenir,Helvetica,sans-serif;
-      }
-      nav {
-        text-align: center;
-      }
-      ul {
-        display: flex;
-        justify-content: space-between;
-      }
-      nav > ul {
-        padding: 4px 16px;
-      }
-      li {
-        display: flex;
-        padding: 6px 8px;
-      }
-      a {
-        color: #067df7;
-        text-decoration: none;
-        font-size: 13px;
-      }
-    `}</style>
-  </nav>
-)
+  toggleDrawer = drawerOpen => () => {
+    this.setState({drawerOpen});
+  }
 
-export default Nav
+  render() {
+    const {classes} = this.props;
+    return [
+      (<Drawer open={this.state.drawerOpen} onClose={this.toggleDrawer(false)}>
+        <div
+          tabIndex={0}
+          role="button"
+          onClick={this.toggleDrawer(false)}
+          onKeyDown={this.toggleDrawer(false)}
+          className={classes.drawer}
+        >
+          <Link href="/schedule">
+            <Typography variant="Title" className={classes.drawerMenuItem}>Schedule</Typography>
+          </Link>
+          <Link href="/about">
+            <Typography variant="Title" className={classes.drawerMenuItem}>About</Typography>
+          </Link>
+          <Button variant="raised" color="secondary">
+            <AddBoxIcon className={classes.leftIcon} />
+            Create Event
+          </Button>
+        </div>
+      </Drawer>),
+      (<AppBar position="static">
+        <Toolbar>
+          <IconButton color="inherit" aria-label="Menu" onClick={this.toggleDrawer(true)}>
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="title" color="inherit">
+            Free Yoga
+          </Typography>
+        </Toolbar>
+      </AppBar>)
+    ];
+  }
+}
+
+export default Nav;
