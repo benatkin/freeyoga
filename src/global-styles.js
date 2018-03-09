@@ -6,7 +6,7 @@ export default (theme) => ({
   },
   event: {
     padding: '10px',
-    marginBottom: '10px',
+    marginBottom: theme.spacing.unit * 2
   },
   leftIcon: {
     marginRight: theme.spacing.unit,
@@ -16,6 +16,15 @@ export default (theme) => ({
   },
   propertyIcon: {
     marginBottom: '-6px',
+  },
+  profile: {
+    textAlign: 'center',
+    padding: theme.spacing.unit * 2
+  },
+  profileImage: {
+    width: '60%',
+    border: '7px solid white',
+    borderRadius: '50%'
   },
   drawer: {
     padding: '20px',
@@ -28,12 +37,12 @@ export default (theme) => ({
   },
   dividerRight: {
     [theme.breakpoints.up('md')]: {
-      paddingRight: theme.spacing.unit * 0.5
+      paddingRight: theme.spacing.unit
     }
   },
   dividerLeft: {
     [theme.breakpoints.up('md')]: {
-      paddingLeft: theme.spacing.unit * 0.5
+      paddingLeft: theme.spacing.unit
     }
   },
 });
