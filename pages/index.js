@@ -131,12 +131,10 @@ class Index extends React.Component {
               <Typography className={classes.property} variant="body1">
                 <PersonIcon className={classes.propertyIcon} /> Rachel Jennine Goudey
               </Typography>
-              <Link href="https://www.meetup.com/Free-Yoga-SF/events/zqxxnnyxfbkb/">
-                <Button variant="raised" color="secondary">
-                  <AddBoxIcon className={classes.leftIcon} />
-                  Attend
-                </Button>
-              </Link>
+              <Button variant="raised" color="secondary" href="https://www.meetup.com/Free-Yoga-SF/events/bmdskpyxfbnb/">
+                <AddBoxIcon className={classes.leftIcon} />
+                Attend
+              </Button>
             </Paper>
           </Grid>
         </Grid>
