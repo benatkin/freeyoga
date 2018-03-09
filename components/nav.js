@@ -10,6 +10,8 @@ import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
 import Link from 'next/link';
 
+import SocialLinks from './social-links';
+
 class Nav extends React.Component {
   state = {
     drawerOpen: false,
@@ -39,6 +41,7 @@ class Nav extends React.Component {
           <Link href="/about">
             <Typography variant="Title" className={classes.drawerMenuItem}>About</Typography>
           </Link>
+          <SocialLinks />
         </div>
       </Drawer>),
       (<AppBar position="static">

@@ -31,9 +31,9 @@ export default (theme) => ({
   },
   drawer: {
     padding: '20px',
-    width: '60vw',
+    width: '75vw',
     [theme.breakpoints.up('md')]: {
-      width: '25vw',
+      width: '33vw',
     }
   },
   drawerMenuItem: {

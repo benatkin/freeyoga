@@ -5,12 +5,13 @@
   "dependencies": {
     "jss": "latest",
     "material-ui": "next",
+    "material-ui-icons": "latest",
+    "mdi-material-ui": "^3.1.0",
     "next": "latest",
     "prop-types": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-jss": "latest",
-    "material-ui-icons": "latest"
+    "react-jss": "latest"
   },
   "scripts": {
     "dev": "next",

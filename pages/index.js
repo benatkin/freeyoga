@@ -1,6 +1,7 @@
 import React from 'react';
 
-import Nav from '../components/nav'
+import Nav from '../components/nav';
+import SocialLinks from '../components/social-links';
 
 import Reboot from 'material-ui/Reboot';
 import Grid from 'material-ui/Grid';
@@ -24,7 +25,7 @@ class Index extends React.Component {
         <Reboot />
 
         <Nav classes={classes} />
-
+        
         <Grid container className={classes.content} spacing={0}>
           <Grid item xs={12} md={6} className={classes.dividerRight}>
             <img src="/static/images/photo1.png" style={{width: '100%'}} />
@@ -38,6 +39,9 @@ class Index extends React.Component {
                 />
               ))
             }
+          </Grid>
+          <Grid item xs={12}>
+            <SocialLinks />
           </Grid>
           <Grid item xs={12}>
             <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Ffreeyogamovement%2F&width=140&layout=button_count&action=like&size=large&show_faces=true&share=true&height=46&appId" width="140" height="46" style={{border: 'none', overflow: 'hidden'}} scrolling="no" frameborder="0" allowTransparency="true"></iframe>
