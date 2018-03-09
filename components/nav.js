@@ -46,9 +46,11 @@ class Nav extends React.Component {
           <IconButton color="inherit" aria-label="Menu" onClick={this.toggleDrawer(true)}>
             <MenuIcon />
           </IconButton>
-          <Typography variant="title" color="inherit">
-            Free Yoga
-          </Typography>
+          <Link href="/">
+            <Typography variant="title" color="inherit" className={classes.siteTitle}>
+              Free Yoga
+            </Typography>
+          </Link>
         </Toolbar>
       </AppBar>)
     ];

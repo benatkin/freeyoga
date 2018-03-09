@@ -26,8 +26,15 @@ export default (theme) => ({
     border: '7px solid white',
     borderRadius: '50%'
   },
+  siteTitle: {
+    cursor: 'pointer'
+  },
   drawer: {
     padding: '20px',
+    width: '60vw',
+    [theme.breakpoints.up('md')]: {
+      width: '25vw',
+    }
   },
   drawerMenuItem: {
     cursor: 'pointer',
