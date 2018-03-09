@@ -4,6 +4,7 @@ import Nav from '../components/nav'
 
 import Reboot from 'material-ui/Reboot';
 import Grid from 'material-ui/Grid';
+import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 import withRoot from '../src/withRoot';
 import globalStyles from '../src/global-styles';
@@ -37,6 +38,10 @@ class Index extends React.Component {
                 />
               ))
             }
+          </Grid>
+          <Grid item xs={12}>
+            <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Ffreeyogamovement%2F&width=140&layout=button_count&action=like&size=large&show_faces=true&share=true&height=46&appId" width="140" height="46" style={{border: 'none', overflow: 'hidden'}} scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+            <Typography variant="caption">&copy; 2018 <a style={{color: 'inherit'}} href="https://www.facebook.com/freeyogamovement/">Free Yoga Movement</a></Typography>
           </Grid>
         </Grid>
       </div>
