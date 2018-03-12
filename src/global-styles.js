@@ -26,6 +26,10 @@ export default (theme) => ({
     border: '7px solid white',
     borderRadius: '50%'
   },
+  profileImageSquare: {
+    border: '25px solid white',
+    width: '60%'
+  },
   siteTitle: {
     cursor: 'pointer'
   },

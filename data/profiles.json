@@ -4,12 +4,13 @@
     "title": "Founder",
     "image": "jake.jpg",
     "facebook": "https://facebook.com/jake.strich",
+    "instagram": "https://www.instagram.com/jakestrich/",
     "linkedin": "https://linkedin.com/in/jakestrich/"
   },
   {
     "name": "Dani Parker",
     "title": "Instructor",
-    "image": "dani.png",
+    "image": "dani2.jpg",
     "facebook": "https://facebook.com/danielle.parker.79",
     "linkedin": "https://linkedin.com/in/danielle-parker-59400a7a/",
     "twitter": "https://twitter.com/dparks530"
@@ -19,7 +20,17 @@
     "title": "Instructor",
     "image": "luke.jpg",
     "facebook": "https://facebook.com/luke.richter1",
+    "instagram": "https://www.instagram.com/zeerichterscale/",
     "linkedin": "https://linkedin.com/in/lukerichter/"
+  },
+  {
+    "name": "Rachel",
+    "title": "Lead Instructor",
+    "image": "rachel.jpg",
+    "facebook": "https://www.facebook.com/rachel.jennine",
+    "instagram": "https://www.instagram.com/racheljennine/",
+    "website": "https://www.racheljenninewellnessandyoga.com/",
+    "square": true
   },
   {
     "name": "Nick Kelly",
@@ -28,13 +39,6 @@
     "facebook": "https://facebook.com/nick.858",
     "linkedin": "https://linkedin.com/in/nicholask/",
     "twitter": "https://twitter.com/__kmiz"
-  },
-  {
-    "name": "Olia Birulia",
-    "title": "UI/UX Designer",
-    "image": "olia.jpg",
-    "facebook": "https://facebook.com/olga.birulia",
-    "linkedin": "https://linkedin.com/in/oliabirulia/"
   },
   {
     "name": "Ben Atkin",
