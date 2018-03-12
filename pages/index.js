@@ -6,6 +6,8 @@ import SocialLinks from '../components/social-links';
 import Reboot from 'material-ui/Reboot';
 import Grid from 'material-ui/Grid';
 import Typography from 'material-ui/Typography';
+import Menu from 'material-ui/Menu';
+import MenuItem from 'material-ui/MenuItem';
 import { withStyles } from 'material-ui/styles';
 import withRoot from '../src/withRoot';
 import globalStyles from '../src/global-styles';
@@ -31,6 +33,9 @@ class Index extends React.Component {
             <img src="/static/images/photo1.png" style={{width: '100%'}} />
           </Grid>
           <Grid item xs={12} md={6} className={classes.dividerLeft}>
+            <Menu>
+              <MenuItem>San Francisco</MenuItem>
+            </Menu>
             {
               events.map(event => (
                 <YogaEvent
