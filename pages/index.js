@@ -30,7 +30,7 @@ class Index extends React.Component {
         
         <Grid container className={classes.content} spacing={0}>
           <Grid item xs={12} md={6} className={classes.dividerRight}>
-            <img src="/static/images/photo1.png" style={{width: '100%'}} />
+            <img src="/static/images/photo2.jpg" style={{width: '100%'}} />
           </Grid>
           <Grid item xs={12} md={6} className={classes.dividerLeft}>
             {/*<Menu>
