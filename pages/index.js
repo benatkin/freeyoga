@@ -6,8 +6,8 @@ import SocialLinks from '../components/social-links';
 import Reboot from 'material-ui/Reboot';
 import Grid from 'material-ui/Grid';
 import Typography from 'material-ui/Typography';
-//import Menu from 'material-ui/Menu';
-//import MenuItem from 'material-ui/MenuItem';
+import List, {ListItem, ListItemText} from 'material-ui/List'
+import Menu, {MenuItem} from 'material-ui/Menu';
 import { withStyles } from 'material-ui/styles';
 import withRoot from '../src/withRoot';
 import globalStyles from '../src/global-styles';
@@ -17,7 +17,31 @@ import YogaEvent from '../components/yoga-event';
 
 const allEvents = require('../data/events');
 
+const options = [
+  'San Francisco',
+  'Sacramento'
+];
+
 class Index extends React.Component {
+  state = {
+    anchorEl: null,
+    selectedIndex: 0,
+  };
+
+  handleClickListItem = event => {
+    this.setState({ anchorEl: event.currentTarget });
+  };
+
+  handleMenuItemClick = (event, index) => {
+    this.setState({ selectedIndex: index, anchorEl: null });
+  };
+
+  handleClose = () => {
+    this.setState({ anchorEl: null });
+  };
+
+
+
   render() {
     const { classes } = this.props;
     const events = allEvents.filter(event => event.featured);
@@ -33,9 +57,35 @@ class Index extends React.Component {
             <img src="/static/images/photo2.jpg" style={{width: '100%'}} />
           </Grid>
           <Grid item xs={12} md={6} className={classes.dividerLeft}>
-            {/*<Menu>
-              <MenuItem>San Francisco</MenuItem>
-            </Menu>*/}
+            <List component="nav">
+              <ListItem
+                button
+                aria-haspopup="true"
+                aria-controls="lock-menu"
+                aria-label="Current City"
+                onClick={this.handleClickListItem}
+              >
+                <ListItemText
+                  primary={`Chapter: ${options[this.state.selectedIndex]}`}
+                />
+              </ListItem>
+            </List>
+            <Menu
+              id="lock-menu"
+              anchorEl={this.state.anchorEl}
+              open={Boolean(this.state.anchorEl)}
+              onClose={this.handleClose}
+            >
+              {options.map((option, index) => (
+                <MenuItem
+                  key={option}
+                  selected={index === this.state.selectedIndex}
+                  onClick={event => this.handleMenuItemClick(event, index)}
+                >
+                  {option}
+                </MenuItem>
+              ))}
+            </Menu>
             {
               events.map(event => (
                 <YogaEvent
