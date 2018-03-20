@@ -40,8 +40,6 @@ class Index extends React.Component {
     this.setState({ anchorEl: null });
   };
 
-
-
   render() {
     const { classes } = this.props;
     const events = allEvents.filter(event => event.featured);
