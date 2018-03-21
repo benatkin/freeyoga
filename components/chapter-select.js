@@ -2,6 +2,7 @@ import React from 'react';
 import List, {ListItem, ListItemText} from 'material-ui/List'
 import Menu, {MenuItem} from 'material-ui/Menu';
 import { withStyles } from 'material-ui/styles';
+import componentCookie from 'component-cookie';
 
 const styles = theme => ({
   button: {
@@ -16,7 +17,8 @@ class ChapterSelect extends React.Component {
 
   handleMenuItemClick = (event, chapterId) => {
     this.setState({ anchorEl: null });
-    return this.props.handleMenuItemClick(event, chapterId)
+    componentCookie('freeyogachapter', chapterId);
+    return this.props.onChapterChange(chapterId);
   }
 
   handleClickListItem = event => {

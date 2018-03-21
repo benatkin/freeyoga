@@ -8,30 +8,22 @@ import { withStyles } from 'material-ui/styles';
 import withRoot from '../src/withRoot';
 import globalStyles from '../src/global-styles';
 import Link from 'next/link';
+import {Router} from '../routes';
 
+import ChapterSelect from '../components/chapter-select';
 import YogaEvent from '../components/yoga-event';
 
 const eventData = require('../data/events');
 const defaultChapterId = 'sf';
 
 class Schedule extends React.Component {
-  state = {
-    anchorEl: null
-  };
-
   static async getInitialProps(ctx) {
     return ({chapterId: ctx.query.chapter || defaultChapterId});
   }
 
-  handleClickListItem = event => {
-    this.setState({ anchorEl: event.currentTarget });
-  };
-
-  handleMenuItemClick = (event, chapterId) => {
-    this.setState({ anchorEl: null });
+  handleChapterChange = chapterId => {
     if (chapterId !== this.props.chapterId) {
       Router.pushRoute('schedule', {chapter: chapterId === defaultChapterId ? null : chapterId})
-      componentCookie('freeyogachapter', chapterId)
     }
   };
 
@@ -47,9 +39,16 @@ class Schedule extends React.Component {
         <Nav classes={classes} chapterId={chapterId} />
 
         <Grid container className={classes.content} spacing={0}>
+          <Grid item xs={12}>
+            <ChapterSelect
+              eventData={eventData}
+              chapterId={chapterId}
+              onChapterChange={this.handleChapterChange}
+            />
+          </Grid>
           {
             events.map((event, i) => (
-              <Grid item xs={12} md={6} className={i % 2 == 0 ? classes.dividerRight : classes.dividerLeft}>
+              <Grid item key={i} xs={12} md={6} className={i % 2 == 0 ? classes.dividerRight : classes.dividerLeft}>
                 <YogaEvent
                   classes={classes}
                   {...event}

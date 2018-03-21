@@ -11,7 +11,6 @@ import withRoot from '../src/withRoot';
 import globalStyles from '../src/global-styles';
 import Link from 'next/link';
 import {Router} from '../routes';
-import componentCookie from 'component-cookie';
 
 import ChapterSelect from '../components/chapter-select';
 import YogaEvent from '../components/yoga-event';
@@ -24,14 +23,13 @@ class Index extends React.Component {
     return ({chapterId: ctx.query.chapter || defaultChapterId})
   }
 
-  handleMenuItemClick = (event, chapterId) => {
+  handleChapterChange = chapterId => {
     if (chapterId !== this.props.chapterId) {
       if (chapterId === defaultChapterId) {
         Router.push('/')
       } else {
         Router.pushRoute('index', {chapter: chapterId})
       }
-      componentCookie('freeyogachapter', chapterId)
     }
   };
 
@@ -54,7 +52,7 @@ class Index extends React.Component {
             <ChapterSelect
               eventData={eventData}
               chapterId={chapterId}
-              handleMenuItemClick={this.handleMenuItemClick}
+              onChapterChange={this.handleChapterChange}
             />
             {
               events.map(event => (

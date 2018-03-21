@@ -25,7 +25,7 @@ class Nav extends React.Component {
   render() {
     const {classes, chapterId} = this.props;
     return [
-      (<Drawer open={this.state.drawerOpen} onClose={this.toggleDrawer(false)}>
+      (<Drawer key="drawer" open={this.state.drawerOpen} onClose={this.toggleDrawer(false)}>
         <div
           tabIndex={0}
           role="button"
@@ -48,7 +48,7 @@ class Nav extends React.Component {
           <SocialLinks />
         </div>
       </Drawer>),
-      (<AppBar position="static">
+      (<AppBar key="appBar" position="static">
         <Toolbar>
           <IconButton color="inherit" aria-label="Menu" onClick={this.toggleDrawer(true)}>
             <MenuIcon />
