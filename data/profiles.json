@@ -2,7 +2,7 @@
   {
     "name": "Jake Strich",
     "title": "Founder",
-    "image": "jake.jpg",
+    "image": "jake2.jpg",
     "facebook": "https://facebook.com/jake.strich",
     "instagram": "https://www.instagram.com/jakestrich/",
     "linkedin": "https://linkedin.com/in/jakestrich/"
@@ -10,7 +10,7 @@
   {
     "name": "Dani Parker",
     "title": "Instructor",
-    "image": "dani2.jpg",
+    "image": "dani3.jpg",
     "facebook": "https://facebook.com/danielle.parker.79",
     "linkedin": "https://linkedin.com/in/danielle-parker-59400a7a/",
     "twitter": "https://twitter.com/dparks530"
@@ -18,7 +18,7 @@
   {
     "name": "Luke Richter",
     "title": "Instructor",
-    "image": "luke.jpg",
+    "image": "luke2.jpg",
     "facebook": "https://facebook.com/luke.richter1",
     "instagram": "https://www.instagram.com/zeerichterscale/",
     "linkedin": "https://linkedin.com/in/lukerichter/"
@@ -26,11 +26,10 @@
   {
     "name": "Rachel",
     "title": "Lead Instructor",
-    "image": "rachel.jpg",
+    "image": "rachel2.jpg",
     "facebook": "https://www.facebook.com/rachel.jennine",
     "instagram": "https://www.instagram.com/racheljennine/",
-    "website": "https://www.racheljenninewellnessandyoga.com/",
-    "square": true
+    "website": "https://www.racheljenninewellnessandyoga.com/"
   },
   {
     "name": "Nick Kelly",

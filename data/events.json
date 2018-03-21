@@ -33,6 +33,16 @@
   },
   "sacramento": {
     "name": "Sacramento",
-    "events": []
+    "events": [
+      {
+        "date": "Wednesday, April 4, 2018",
+        "title": "Test Sacramento Event",
+        "time": "12:00 PM to 1:00 PM",
+        "location": "TDB",
+        "instructor": "A Yogi",
+        "url": "https://www.meetup.com/Free-Yoga-SF/events/zqxxnnyxgbgb/",
+        "featured": true
+      }
+    ]
   }
 }
