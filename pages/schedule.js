@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Nav from '../components/nav'
+import Nav from '../components/nav';
 
 import Reboot from 'material-ui/Reboot';
 import Grid from 'material-ui/Grid';
@@ -20,7 +20,7 @@ class Schedule extends React.Component {
   };
 
   static async getInitialProps(ctx) {
-    return ({chapterId: ctx.query.chapter || defaultChapterId})
+    return ({chapterId: ctx.query.chapter || defaultChapterId});
   }
 
   handleClickListItem = event => {

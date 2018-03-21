@@ -6,8 +6,6 @@ import SocialLinks from '../components/social-links';
 import Reboot from 'material-ui/Reboot';
 import Grid from 'material-ui/Grid';
 import Typography from 'material-ui/Typography';
-import List, {ListItem, ListItemText} from 'material-ui/List'
-import Menu, {MenuItem} from 'material-ui/Menu';
 import { withStyles } from 'material-ui/styles';
 import withRoot from '../src/withRoot';
 import globalStyles from '../src/global-styles';
@@ -15,26 +13,18 @@ import Link from 'next/link';
 import {Router} from '../routes';
 import componentCookie from 'component-cookie';
 
+import ChapterSelect from '../components/chapter-select';
 import YogaEvent from '../components/yoga-event';
 
 const eventData = require('../data/events');
 const defaultChapterId = 'sf';
 
 class Index extends React.Component {
-  state = {
-    anchorEl: null
-  };
-
   static async getInitialProps(ctx) {
     return ({chapterId: ctx.query.chapter || defaultChapterId})
   }
 
-  handleClickListItem = event => {
-    this.setState({ anchorEl: event.currentTarget });
-  };
-
   handleMenuItemClick = (event, chapterId) => {
-    this.setState({ anchorEl: null });
     if (chapterId !== this.props.chapterId) {
       if (chapterId === defaultChapterId) {
         Router.push('/')
@@ -45,13 +35,9 @@ class Index extends React.Component {
     }
   };
 
-  handleClose = () => {
-    this.setState({ anchorEl: null });
-  };
-
   render() {
     const { classes, chapterId } = this.props;
-    const chapter = eventData[chapterId]
+    const chapter = eventData[chapterId];
     const events = chapter.events.filter(event => event.featured);
 
     return (
@@ -65,35 +51,11 @@ class Index extends React.Component {
             <img src="/static/images/photo2.jpg" style={{width: '100%'}} />
           </Grid>
           <Grid item xs={12} md={6} className={classes.dividerLeft}>
-            <List component="nav">
-              <ListItem
-                button
-                aria-haspopup="true"
-                aria-controls="lock-menu"
-                aria-label="Current City"
-                onClick={this.handleClickListItem}
-              >
-                <ListItemText
-                  primary={`Chapter: ${chapter.name}`}
-                />
-              </ListItem>
-            </List>
-            <Menu
-              id="lock-menu"
-              anchorEl={this.state.anchorEl}
-              open={Boolean(this.state.anchorEl)}
-              onClose={this.handleClose}
-            >
-              {Object.keys(eventData).map((chapterId, index) => (
-                <MenuItem
-                  key={chapterId}
-                  selected={index === this.state.selectedIndex}
-                  onClick={event => this.handleMenuItemClick(event, chapterId)}
-                >
-                  {eventData[chapterId].name}
-                </MenuItem>
-              ))}
-            </Menu>
+            <ChapterSelect
+              eventData={eventData}
+              chapterId={chapterId}
+              handleMenuItemClick={this.handleMenuItemClick}
+            />
             {
               events.map(event => (
                 <YogaEvent
