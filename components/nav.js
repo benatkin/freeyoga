@@ -9,6 +9,7 @@ import Button from 'material-ui/Button';
 import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
 import Link from 'next/link';
+import {Link as RouteLink} from '../routes';
 
 import SocialLinks from './social-links';
 
@@ -22,7 +23,7 @@ class Nav extends React.Component {
   }
 
   render() {
-    const {classes} = this.props;
+    const {classes, chapterId} = this.props;
     return [
       (<Drawer open={this.state.drawerOpen} onClose={this.toggleDrawer(false)}>
         <div
@@ -32,12 +33,15 @@ class Nav extends React.Component {
           onKeyDown={this.toggleDrawer(false)}
           className={classes.drawer}
         >
-          <Link href="/">
+          {chapterId === 'sf' && (<Link href="/">
             <Typography variant="Title" className={classes.drawerMenuItem}>Home</Typography>
-          </Link>
-          <Link href="/schedule">
+          </Link>)}
+          {chapterId !== 'sf' && (<RouteLink route="index" params={{chapter: chapterId}}>
+            <Typography variant="Title" className={classes.drawerMenuItem}>Home</Typography>
+          </RouteLink>)}
+          <RouteLink route='schedule' params={{chapter: chapterId === 'sf' ? null : chapterId}}>
             <Typography variant="Title" className={classes.drawerMenuItem}>Schedule</Typography>
-          </Link>
+          </RouteLink>
           <Link href="/about">
             <Typography variant="Title" className={classes.drawerMenuItem}>About</Typography>
           </Link>

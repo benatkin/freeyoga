@@ -12,28 +12,37 @@ import { withStyles } from 'material-ui/styles';
 import withRoot from '../src/withRoot';
 import globalStyles from '../src/global-styles';
 import Link from 'next/link';
+import {Router} from '../routes';
+import componentCookie from 'component-cookie';
 
 import YogaEvent from '../components/yoga-event';
 
-const allEvents = require('../data/events');
-
-const options = [
-  'San Francisco',
-  'Sacramento'
-];
+const eventData = require('../data/events');
+const defaultChapterId = 'sf';
 
 class Index extends React.Component {
   state = {
-    anchorEl: null,
-    selectedIndex: 0,
+    anchorEl: null
   };
+
+  static async getInitialProps(ctx) {
+    return ({chapterId: ctx.query.chapter || defaultChapterId})
+  }
 
   handleClickListItem = event => {
     this.setState({ anchorEl: event.currentTarget });
   };
 
-  handleMenuItemClick = (event, index) => {
-    this.setState({ selectedIndex: index, anchorEl: null });
+  handleMenuItemClick = (event, chapterId) => {
+    this.setState({ anchorEl: null });
+    if (chapterId !== this.props.chapterId) {
+      if (chapterId === defaultChapterId) {
+        Router.push('/')
+      } else {
+        Router.pushRoute('index', {chapter: chapterId})
+      }
+      componentCookie('freeyogachapter', chapterId)
+    }
   };
 
   handleClose = () => {
@@ -41,14 +50,15 @@ class Index extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
-    const events = allEvents.filter(event => event.featured);
+    const { classes, chapterId } = this.props;
+    const chapter = eventData[chapterId]
+    const events = chapter.events.filter(event => event.featured);
 
     return (
       <div className={classes.root}>
         <Reboot />
 
-        <Nav classes={classes} />
+        <Nav classes={classes} chapterId={this.props.chapterId} />
         
         <Grid container className={classes.content} spacing={0}>
           <Grid item xs={12} md={6} className={classes.dividerRight}>
@@ -64,7 +74,7 @@ class Index extends React.Component {
                 onClick={this.handleClickListItem}
               >
                 <ListItemText
-                  primary={`Chapter: ${options[this.state.selectedIndex]}`}
+                  primary={`Chapter: ${chapter.name}`}
                 />
               </ListItem>
             </List>
@@ -74,13 +84,13 @@ class Index extends React.Component {
               open={Boolean(this.state.anchorEl)}
               onClose={this.handleClose}
             >
-              {options.map((option, index) => (
+              {Object.keys(eventData).map((chapterId, index) => (
                 <MenuItem
-                  key={option}
+                  key={chapterId}
                   selected={index === this.state.selectedIndex}
-                  onClick={event => this.handleMenuItemClick(event, index)}
+                  onClick={event => this.handleMenuItemClick(event, chapterId)}
                 >
-                  {option}
+                  {eventData[chapterId].name}
                 </MenuItem>
               ))}
             </Menu>

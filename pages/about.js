@@ -8,12 +8,19 @@ import { withStyles } from 'material-ui/styles';
 import withRoot from '../src/withRoot';
 import globalStyles from '../src/global-styles';
 import Link from 'next/link';
+import cookies from 'next-cookies'
 
 import Profile from '../components/profile';
 
+const defaultChapterId = 'sf';
 const profiles = require('../data/profiles');
 
 class Schedule extends React.Component {
+  static async getInitialProps(ctx) {
+    const {freeyogachapter} = cookies(ctx)
+    return {chapterId: freeyogachapter || defaultChapterId}
+  }
+
   render() {
     const { classes } = this.props;
 
@@ -21,7 +28,7 @@ class Schedule extends React.Component {
       <div className={classes.root}>
         <Reboot />
 
-        <Nav classes={classes} />
+        <Nav classes={classes} chapterId={this.props.chapterId} />
 
         <Grid container className={classes.content} spacing={0}>
           <Grid item xs={12}>

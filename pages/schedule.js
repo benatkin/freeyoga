@@ -11,18 +11,40 @@ import Link from 'next/link';
 
 import YogaEvent from '../components/yoga-event';
 
-const allEvents = require('../data/events');
+const eventData = require('../data/events');
+const defaultChapterId = 'sf';
 
 class Schedule extends React.Component {
+  state = {
+    anchorEl: null
+  };
+
+  static async getInitialProps(ctx) {
+    return ({chapterId: ctx.query.chapter || defaultChapterId})
+  }
+
+  handleClickListItem = event => {
+    this.setState({ anchorEl: event.currentTarget });
+  };
+
+  handleMenuItemClick = (event, chapterId) => {
+    this.setState({ anchorEl: null });
+    if (chapterId !== this.props.chapterId) {
+      Router.pushRoute('schedule', {chapter: chapterId === defaultChapterId ? null : chapterId})
+      componentCookie('freeyogachapter', chapterId)
+    }
+  };
+
   render() {
-    const { classes } = this.props;
-    const events = allEvents;
+    const { classes, chapterId } = this.props;
+    const chapter = eventData[chapterId]
+    const events = chapter.events;
 
     return (
       <div className={classes.root}>
         <Reboot />
 
-        <Nav classes={classes} />
+        <Nav classes={classes} chapterId={chapterId} />
 
         <Grid container className={classes.content} spacing={0}>
           {
