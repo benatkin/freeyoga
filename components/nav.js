@@ -48,16 +48,16 @@ class Nav extends React.Component {
           <SocialLinks />
         </div>
       </Drawer>),
-      (<AppBar key="appBar" position="static">
+      (<AppBar className={classes.appBar} key="appBar" position="static">
         <Toolbar>
-          <IconButton color="inherit" aria-label="Menu" onClick={this.toggleDrawer(true)}>
+          <IconButton className={classes.slideMenu} color="inherit" aria-label="Menu" onClick={this.toggleDrawer(true)}>
             <MenuIcon />
           </IconButton>
-          <Link href="/">
-            <Typography variant="title" color="inherit" className={classes.siteTitle}>
-              Free Yoga
-            </Typography>
-          </Link>
+          <div className={classes.logoDiv}>
+            <Link href="/">
+              <img className={classes.logoImg} src="/static/images/logo-stacked.png" />
+            </Link>
+          </div>
         </Toolbar>
       </AppBar>)
     ];

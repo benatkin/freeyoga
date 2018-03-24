@@ -56,4 +56,19 @@ export default (theme) => ({
       paddingLeft: theme.spacing.unit
     }
   },
+  slideMenu: {
+    [theme.breakpoints.up('md')]: {
+      display: 'none'
+    }
+  },
+  logoDiv: {
+    backgroundColor: 'white'
+  },
+  logoImg: {
+    height: '80px'
+  },
+  appBar: {
+    backgroundColor: 'black',
+    color: 'white'
+  }
 });
