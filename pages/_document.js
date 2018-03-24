@@ -26,6 +26,7 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Catamaran:700|Roboto:300,400,500"
           />
+          <link rel="icon" href="/static/favicon.png" />
         </Head>
         <body>
           <Main />
