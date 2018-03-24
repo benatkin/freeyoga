@@ -75,7 +75,7 @@ export default (theme) => ({
     display: 'inline-block'
   },
   logoImg: {
-    height: '80px',
+    height: '100px',
     cursor: 'pointer'
   },
   appBarRoot: {
@@ -83,7 +83,9 @@ export default (theme) => ({
   },
   appBar: {
     backgroundColor: 'black',
-    color: 'white'
+    color: 'white',
+    paddingLeft: '30px',
+    paddingRight: '30px'
   },
   topMenuItem: {
     color: 'white',
@@ -98,5 +100,41 @@ export default (theme) => ({
   },
   popperClose: {
     pointerEvents: 'none',
+  },
+  header: {
+    backgroundImage: 'url(/static/images/bridge-yoga.jpg)',
+    width: '100%',
+    height: '85vh',
+    backgroundSize: 'cover',
+    color: 'white',
+    fontFamily: "'Helvetica','Arial','sans-serif'"
+  },
+  headerContent: {
+    textAlign: 'center',
+    paddingTop: 100,
+    paddingRight: 15,
+    paddingBottom: 100
+  },
+  headerContentInner: {
+    boxSizing: 'border-box'
+  },
+  homeHeading: {
+    fontWeight: 700,
+    fontSize: '75px',
+    lineHeight: '75px',
+    textTransform: 'uppercase',
+    marginTop: 0,
+    marginBottom: 0,
+    fontFamily: "'Catamaran','Helvetica','Arial','sans-serif'"
+  },
+  smallHr: {
+    margin: '30px auto',
+    width: '30%',
+    height: 0,
+    borderTop: '1px solid #eee'
+  },
+  homeSubheading: {
+    fontSize: '16px',
+    color: 'rgba(255,255,255,0.7)'
   }
 });

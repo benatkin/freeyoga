@@ -44,6 +44,16 @@ class Index extends React.Component {
 
         <Nav classes={classes} chapterId={this.props.chapterId} />
         
+        <header className={classes.header}>
+          <div className={classes.headerContent}>
+            <div className={classes.headerContentInner}>
+              <h1 className={classes.homeHeading}>Free Yoga</h1>
+              <hr className={classes.smallHr} />
+              <p className={classes.homeSubheading}><em>Accessible classes for everyone</em></p>
+            </div>
+          </div>
+        </header>
+
         <Grid container className={classes.content} spacing={0}>
           <Grid item xs={12} md={6} className={classes.dividerRight}>
             <img src="/static/images/photo2.jpg" style={{width: '100%'}} />
