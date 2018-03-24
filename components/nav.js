@@ -42,7 +42,7 @@ class Nav extends React.Component {
   }
 
   handleMenuItemClick = (event, chapterId) => {
-    this.setState({ anchorEl: null })
+    this.setState({ menuOpen: false })
     componentCookie('freeyogachapter', chapterId)
     Router.pushRoute('schedule', {chapter: chapterId})
   }
