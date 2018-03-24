@@ -3,15 +3,6 @@
     "name": "San Francisco",
     "events": [
       {
-        "date": "Saturday, March 24, 2018",
-        "title": "Gratitude in the Park - Donation Yoga Flow",
-        "time": "10:45 AM to 12:00 PM",
-        "location": "Conservatory of Flowers",
-        "instructor": "Rachel Jennine Goudey",
-        "url": "https://www.meetup.com/Free-Yoga-SF/events/gmgskpyxfbgc/",
-        "featured": true
-      },
-      {
         "date": "Saturday, March 31, 2018",
         "title": "Gratitude in the Park - Donation Yoga Flow",
         "time": "10:45 AM to 12:00 PM",
@@ -26,6 +17,19 @@
         "time": "12:00 PM to 1:00 PM",
         "location": "The Vault",
         "instructor": "Matthew",
+        "url": "https://www.meetup.com/Free-Yoga-SF/events/zqxxnnyxgbgb/",
+        "featured": true
+      }
+    ]
+  },
+  "sacramento": {
+    "name": "Sacramento",
+    "events": [
+      {
+        "date": "Saturday, March 31, 2018",
+        "title": "Yoga in the Park",
+        "time": "9:00 AM to 10:30 AM",
+        "location": "McKinley Park",
         "url": "https://www.meetup.com/Free-Yoga-SF/events/zqxxnnyxgbgb/",
         "featured": true
       }
