@@ -42,9 +42,15 @@ export default (theme) => ({
   },
   drawerMenuItem: {
     cursor: 'pointer',
-    color: theme.palette.primary.main,
     fontSize: '120%',
     paddingBottom: theme.spacing.unit * 0.5
+  },
+  drawerSubMenuItem: {
+    color: 'black',
+    cursor: 'pointer',
+    fontSize: '100%',
+    paddingBottom: theme.spacing.unit * 0.5,
+    paddingLeft: 20
   },
   dividerRight: {
     [theme.breakpoints.up('md')]: {
@@ -61,14 +67,36 @@ export default (theme) => ({
       display: 'none'
     }
   },
+  logoWrapper: {
+    flex: 1
+  },
   logoDiv: {
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+    display: 'inline-block'
   },
   logoImg: {
-    height: '80px'
+    height: '80px',
+    cursor: 'pointer'
+  },
+  appBarRoot: {
+    flexGrow: 1
   },
   appBar: {
     backgroundColor: 'black',
     color: 'white'
+  },
+  topMenuItem: {
+    color: 'white',
+    fontSize: '14px',
+    textTransform: 'none',
+    '&:hover': {
+      color: '#ccc'
+    },
+    [theme.breakpoints.down('sm')]: {
+      display: 'none'
+    }
+  },
+  popperClose: {
+    pointerEvents: 'none',
   }
 });

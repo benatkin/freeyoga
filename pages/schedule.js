@@ -39,17 +39,10 @@ class Schedule extends React.Component {
         <Nav classes={classes} chapterId={chapterId} />
 
         <Grid container className={classes.content} spacing={0}>
-          <Grid item xs={12}>
-            <ChapterSelect
-              eventData={eventData}
-              chapterId={chapterId}
-              onChapterChange={this.handleChapterChange}
-            />
-          </Grid>
           {
             events.map((event, i) => (
               <Grid item key={i} xs={12} md={6} className={i % 2 == 0 ? classes.dividerRight : classes.dividerLeft}>
-                <YogaEvent
+                <YogaEvent key={i}
                   classes={classes}
                   {...event}
                 />
