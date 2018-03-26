@@ -73,11 +73,11 @@ class Nav extends React.Component {
               <Typography variant="title" className={classes.drawerSubMenuItem}>{eventData[chapterId].name}</Typography>
             </RouteLink>
           ))}
-          <Link href="https://freeyoga.typeform.com/to/LN4eDE">
-            <Typography variant="title" className={classes.drawerMenuItem}>Become a FY Ambassador</Typography>
-          </Link>
           <Link href="/about">
             <Typography variant="title" className={classes.drawerMenuItem}>About</Typography>
+          </Link>
+          <Link href="https://freeyoga.typeform.com/to/LN4eDE">
+            <Typography variant="title" className={classes.drawerMenuItem}>Become a FY Ambassador</Typography>
           </Link>
           <SocialLinks />
         </div>
@@ -101,14 +101,14 @@ class Nav extends React.Component {
                   Find A Chapter <DropdownIcon />
                 </Button>
               </Target>
-              <Button className={classes.topMenuItem} href="https://freeyoga.typeform.com/to/LN4eDE">
-                Become a FY Ambassador
-              </Button>
               <Link href="/about">
                 <Button className={classes.topMenuItem}>
                   About
                 </Button>
               </Link>
+              <Button className={classes.topMenuItem} href="https://freeyoga.typeform.com/to/LN4eDE">
+                Become a FY Ambassador
+              </Button>
               <IconButton className={classes.slideMenu} color="inherit" aria-label="Menu" onClick={this.toggleDrawer(true)}>
                 <MenuIcon />
               </IconButton>
