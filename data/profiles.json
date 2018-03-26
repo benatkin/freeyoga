@@ -1,11 +1,11 @@
 [
   {
-    "name": "Jake Strich",
-    "title": "Founder",
-    "image": "jake2.jpg",
-    "facebook": "https://facebook.com/jake.strich",
-    "instagram": "https://www.instagram.com/jakestrich/",
-    "linkedin": "https://linkedin.com/in/jakestrich/"
+    "name": "Rachel",
+    "title": "Lead Instructor",
+    "image": "rachel2.jpg",
+    "facebook": "https://www.facebook.com/rachel.jennine",
+    "instagram": "https://www.instagram.com/racheljennine/",
+    "website": "https://www.racheljenninewellnessandyoga.com/"
   },
   {
     "name": "Dani Parker",
@@ -17,19 +17,19 @@
   },
   {
     "name": "Luke Richter",
-    "title": "Instructor",
+    "title": "Co-Founder & Community Organizer",
     "image": "luke2.jpg",
     "facebook": "https://facebook.com/luke.richter1",
     "instagram": "https://www.instagram.com/zeerichterscale/",
     "linkedin": "https://linkedin.com/in/lukerichter/"
   },
   {
-    "name": "Rachel",
-    "title": "Lead Instructor",
-    "image": "rachel2.jpg",
-    "facebook": "https://www.facebook.com/rachel.jennine",
-    "instagram": "https://www.instagram.com/racheljennine/",
-    "website": "https://www.racheljenninewellnessandyoga.com/"
+    "name": "Ben Atkin",
+    "title": "Software Engineer",
+    "image": "ben.jpg",
+    "facebook": "https://facebook.com/atkin",
+    "linkedin": "https://linkedin.com/in/benatkin/",
+    "twitter": "https://twitter.com/_batkin"
   },
   {
     "name": "Nick Kelly",
@@ -40,11 +40,11 @@
     "twitter": "https://twitter.com/__kmiz"
   },
   {
-    "name": "Ben Atkin",
-    "title": "Software Engineer",
-    "image": "ben.jpg",
-    "facebook": "https://facebook.com/atkin",
-    "linkedin": "https://linkedin.com/in/benatkin/",
-    "twitter": "https://twitter.com/_batkin"
+    "name": "Jake Strich",
+    "title": "Co-Founder & Community Organizer",
+    "image": "jake2.jpg",
+    "facebook": "https://facebook.com/jake.strich",
+    "instagram": "https://www.instagram.com/jakestrich/",
+    "linkedin": "https://linkedin.com/in/jakestrich/"
   }
 ]

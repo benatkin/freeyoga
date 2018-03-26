@@ -22,9 +22,9 @@ export default ({classes, date, title, time, location, instructor, url}) => (
     {instructor && (<Typography className={classes.property} variant="body1">
       <PersonIcon className={classes.propertyIcon} /> {instructor}
     </Typography>)}
-    <Button variant="raised" color="secondary" href={url}>
+    <Button classes={classes.signUpButton} variant="raised" color="secondary" href={url}>
       <AddBoxIcon className={classes.leftIcon} />
-      Attend
+      Sign Up for {title}
     </Button>
   </Paper>
 )

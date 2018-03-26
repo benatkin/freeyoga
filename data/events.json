@@ -8,7 +8,7 @@
         "time": "10:45 AM to 12:00 PM",
         "location": "Conservatory of Flowers",
         "instructor": "Rachel Jennine Goudey",
-        "url": "https://www.meetup.com/Free-Yoga-SF/events/gmgskpyxfbpc/",
+        "url": "https://www.eventbrite.com/e/gratitude-in-the-park-yoga-flow-tickets-43683987984?aff=erelexpmlt",
         "featured": true
       },
       {
@@ -17,7 +17,16 @@
         "time": "12:00 PM to 1:00 PM",
         "location": "The Vault",
         "instructor": "Matthew",
-        "url": "https://www.meetup.com/Free-Yoga-SF/events/zqxxnnyxgbgb/",
+        "url": "https://freeyoga.typeform.com/to/yJ7dbB",
+        "featured": true
+      },
+      {
+        "date": "Saturday, April 7, 2018",
+        "title": "Gratitude in the Park - Donation Yoga Flow",
+        "time": "10:45 AM to 12:00 PM",
+        "location": "Conservatory of Flowers",
+        "instructor": "Rachel Jennine Goudey",
+        "url": "https://www.eventbrite.com/e/gratitude-in-the-park-yoga-flow-tickets-43683988987?aff=erelexpmlt",
         "featured": true
       }
     ]

@@ -143,5 +143,8 @@ export default (theme) => ({
   },
   cta: {
     marginTop: theme.spacing.unit * 7
+  },
+  signUpButton: {
+    width: '100%'
   }
 });
