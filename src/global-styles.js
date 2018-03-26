@@ -125,7 +125,11 @@ export default (theme) => ({
     textTransform: 'uppercase',
     marginTop: 0,
     marginBottom: 0,
-    fontFamily: "'Catamaran','Helvetica','Arial','sans-serif'"
+    fontFamily: "'Catamaran','Helvetica','Arial','sans-serif'",
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '60px',
+      lineHeight: '60px',
+    }
   },
   smallHr: {
     margin: '30px auto',
@@ -136,5 +140,8 @@ export default (theme) => ({
   homeSubheading: {
     fontSize: '16px',
     color: 'rgba(255,255,255,0.7)'
+  },
+  cta: {
+    marginTop: theme.spacing.unit * 7
   }
 });

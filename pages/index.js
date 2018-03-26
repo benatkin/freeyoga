@@ -6,11 +6,12 @@ import SocialLinks from '../components/social-links';
 import Reboot from 'material-ui/Reboot';
 import Grid from 'material-ui/Grid';
 import Typography from 'material-ui/Typography';
+import Button from 'material-ui/Button';
 import { withStyles } from 'material-ui/styles';
 import withRoot from '../src/withRoot';
 import globalStyles from '../src/global-styles';
 import Link from 'next/link';
-import {Router} from '../routes';
+import {Link as RouteLink, Router} from '../routes';
 
 import ChapterSelect from '../components/chapter-select';
 import YogaEvent from '../components/yoga-event';
@@ -50,6 +51,15 @@ class Index extends React.Component {
               <h1 className={classes.homeHeading}>Free Yoga</h1>
               <hr className={classes.smallHr} />
               <p className={classes.homeSubheading}><em>Accessible classes for everyone</em></p>
+              <Button
+                className={classes.cta}
+                variant="raised"
+                color="secondary"
+                size="large"
+                onClick={ () => Router.pushRoute('schedule', {chapter: 'sf'}) }
+              >
+                Join Us
+              </Button>
             </div>
           </div>
         </header>
