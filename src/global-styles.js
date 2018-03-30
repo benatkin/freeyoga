@@ -101,19 +101,13 @@ export default (theme) => ({
   popperClose: {
     pointerEvents: 'none',
   },
-  header: {
-    backgroundImage: 'url(/static/images/bridge-yoga.jpg)',
-    width: '100%',
-    height: '85vh',
-    backgroundSize: 'cover',
-    color: 'white',
-    fontFamily: "'Helvetica','Arial','sans-serif'"
-  },
   headerContent: {
     textAlign: 'center',
     paddingTop: 100,
     paddingRight: 15,
-    paddingBottom: 300
+    paddingBottom: 300,
+    color: 'white',
+    fontFamily: "'Helvetica','Arial','sans-serif'"
   },
   headerContentInner: {
     boxSizing: 'border-box'
