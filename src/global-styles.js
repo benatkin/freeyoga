@@ -146,5 +146,13 @@ export default (theme) => ({
   },
   signUpButton: {
     width: '100%'
+  },
+  aboutText: {
+    fontFamily: "'Source Sans Pro','Helvetica','Arial','sans-serif'",
+    fontSize: '120%',
+    [theme.breakpoints.up('md')]: {
+      paddingLeft: '20%',
+      paddingRight: '20%'
+    }
   }
 });

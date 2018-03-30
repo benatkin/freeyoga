@@ -31,7 +31,7 @@ class Schedule extends React.Component {
         <Nav classes={classes} chapterId={this.props.chapterId} />
 
         <Grid container className={classes.content} spacing={0}>
-          <Grid item xs={12}>
+          <Grid item xs={12} className={classes.aboutText}>
             <p>
               Our mission is to encourage our communities to move, breathe and
               connect by practicing yoga. We do this for free because we feel that
