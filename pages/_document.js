@@ -24,8 +24,9 @@ class MyDocument extends Document {
           <meta name="theme-color" content={pageContext.theme.palette.primary[500]} />
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
+            href="https://fonts.googleapis.com/css?family=Catamaran:700|Roboto:300,400,500|Source+Sans+Pro"
           />
+          <link rel="icon" href="/static/favicon.png" />
         </Head>
         <body>
           <Main />

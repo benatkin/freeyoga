@@ -1,38 +1,47 @@
-[
-  {
-    "date": "Saturday, March 17, 2018",
-    "title": "Gratitude in the Park - Donation Yoga Flow",
-    "time": "10:45 AM to 12:00 PM",
-    "location": "Conservatory of Flowers",
-    "instructor": "Rachel Jennine Goudey",
-    "url": "https://www.meetup.com/Free-Yoga-SF/events/gmgskpyxfbwb/",
-    "featured": true
+{
+  "sf": {
+    "name": "San Francisco",
+    "events": [
+      {
+        "date": "Saturday, March 31, 2018",
+        "title": "Gratitude in the Park - Donation Yoga Flow",
+        "time": "10:45 AM to 12:00 PM",
+        "location": "Conservatory of Flowers",
+        "instructor": "Rachel Jennine Goudey",
+        "url": "https://www.eventbrite.com/e/gratitude-in-the-park-yoga-flow-tickets-43683987984?aff=erelexpmlt",
+        "featured": true
+      },
+      {
+        "date": "Wednesday, April 4, 2018",
+        "title": "Free Yoga at SF's Best Coworking Space - The Vault",
+        "time": "12:00 PM to 1:00 PM",
+        "location": "The Vault",
+        "instructor": "Matthew",
+        "url": "https://freeyoga.typeform.com/to/yJ7dbB",
+        "featured": true
+      },
+      {
+        "date": "Saturday, April 7, 2018",
+        "title": "Gratitude in the Park - Donation Yoga Flow",
+        "time": "10:45 AM to 12:00 PM",
+        "location": "Conservatory of Flowers",
+        "instructor": "Rachel Jennine Goudey",
+        "url": "https://www.eventbrite.com/e/gratitude-in-the-park-yoga-flow-tickets-43683988987?aff=erelexpmlt",
+        "featured": true
+      }
+    ]
   },
-  {
-    "date": "Saturday, March 24, 2018",
-    "title": "Gratitude in the Park - Donation Yoga Flow",
-    "time": "10:45 AM to 12:00 PM",
-    "location": "Conservatory of Flowers",
-    "instructor": "Rachel Jennine Goudey",
-    "url": "https://www.meetup.com/Free-Yoga-SF/events/gmgskpyxfbgc/",
-    "featured": true
-  },
-  {
-    "date": "Saturday, March 31, 2018",
-    "title": "Gratitude in the Park - Donation Yoga Flow",
-    "time": "10:45 AM to 12:00 PM",
-    "location": "Conservatory of Flowers",
-    "instructor": "Rachel Jennine Goudey",
-    "url": "https://www.meetup.com/Free-Yoga-SF/events/gmgskpyxfbpc/",
-    "featured": false
-  },
-  {
-    "date": "Wednesday, April 4, 2018",
-    "title": "Free Yoga at SF's Best Coworking Space - The Vault",
-    "time": "12:00 PM to 1:00 PM",
-    "location": "The Vault",
-    "instructor": "Matthew",
-    "url": "https://www.meetup.com/Free-Yoga-SF/events/zqxxnnyxgbgb/",
-    "featured": true
+  "sacramento": {
+    "name": "Sacramento",
+    "events": [
+      {
+        "date": "Saturday, March 31, 2018",
+        "title": "Yoga in the Park",
+        "time": "9:00 AM to 10:30 AM",
+        "location": "McKinley Park",
+        "url": "https://www.meetup.com/Free-Yoga-SF/events/zqxxnnyxgbgb/",
+        "featured": true
+      }
+    ]
   }
-]
+}
