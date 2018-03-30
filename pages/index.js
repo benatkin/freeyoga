@@ -12,6 +12,7 @@ import withRoot from '../src/withRoot';
 import globalStyles from '../src/global-styles';
 import Link from 'next/link';
 import {Link as RouteLink, Router} from '../routes';
+import {Parallax} from 'react-parallax';
 
 import ChapterSelect from '../components/chapter-select';
 import YogaEvent from '../components/yoga-event';
@@ -44,8 +45,10 @@ class Index extends React.Component {
         <Reboot />
 
         <Nav classes={classes} chapterId={this.props.chapterId} />
+
         
-        <header className={classes.header}>
+        
+        <Parallax bgImage="/static/images/bridge-yoga.jpg" strength={500}>
           <div className={classes.headerContent}>
             <div className={classes.headerContentInner}>
               <h1 className={classes.homeHeading}>Free Yoga</h1>
@@ -62,7 +65,7 @@ class Index extends React.Component {
               </Button>
             </div>
           </div>
-        </header>
+        </Parallax>
 
         <Grid container className={classes.content} spacing={0}>
           <Grid item xs={12} md={6} className={classes.dividerRight}>
