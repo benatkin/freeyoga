@@ -113,7 +113,7 @@ export default (theme) => ({
     textAlign: 'center',
     paddingTop: 100,
     paddingRight: 15,
-    paddingBottom: 100
+    paddingBottom: 300
   },
   headerContentInner: {
     boxSizing: 'border-box'
