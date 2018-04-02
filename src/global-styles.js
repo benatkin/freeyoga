@@ -105,9 +105,12 @@ export default (theme) => ({
     textAlign: 'center',
     paddingTop: 100,
     paddingRight: 15,
-    paddingBottom: 300,
+    paddingBottom: 200,
     color: 'white',
-    fontFamily: "'Helvetica','Arial','sans-serif'"
+    fontFamily: "'Helvetica','Arial','sans-serif'",
+    [theme.breakpoints.up('md')]: {
+      paddingBottom: 300,
+    }
   },
   headerContentInner: {
     boxSizing: 'border-box'

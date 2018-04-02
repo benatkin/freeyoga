@@ -55,7 +55,7 @@ class Index extends React.Component {
               <hr className={classes.smallHr} />
               <p className={classes.homeSubheading}><em>Accessible classes for everyone</em></p>
               <Button
-                className={classes.cta}
+                classes={{root: classes.cta}}
                 variant="raised"
                 color="secondary"
                 size="large"
