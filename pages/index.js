@@ -24,15 +24,19 @@ const defaultChapterId = 'sf';
 import getConfig from 'next/config';
 const {serverRuntimeConfig, publicRuntimeConfig} = getConfig();
 
-const apiBaseUrl = serverRuntimeConfig.apiBaseUrl || publicRuntimeConfig.apiBaseUrl;
-
 class Index extends React.Component {
-  static async getInitialProps(ctx) {
+  static async getInitialProps({req, query}) {
+    const protocol = req ? (req.headers['x-forwarded-proto'] || 'http') : 'http';
+    const serverBaseUrl = req ? `${protocol}://${req.headers.host}` : '';
+    const apiBaseUrl = serverRuntimeConfig.apiBaseUrl
+      ? `${serverBaseUrl}/api`
+      : publicRuntimeConfig.apiBaseUrl;
+    console.log({apiBaseUrl})
     const res = await fetch(`${apiBaseUrl}/events`)
-    console.log({res})
     const json = await res.json()
+    console.log({length: json.length, error: json.error})
     return ({
-      chapterId: ctx.query.chapter || defaultChapterId,
+      chapterId: query.chapter || defaultChapterId,
       events: json
     })
   }
