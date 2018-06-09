@@ -5,8 +5,8 @@ import Nav from '../components/nav'
 import Reboot from 'material-ui/Reboot';
 import Grid from 'material-ui/Grid';
 import { withStyles } from 'material-ui/styles';
-import withRoot from '../src/withRoot';
-import globalStyles from '../src/global-styles';
+import withRoot from '../lib/withRoot';
+import globalStyles from '../lib/global-styles';
 import Link from 'next/link';
 import cookies from 'next-cookies'
 

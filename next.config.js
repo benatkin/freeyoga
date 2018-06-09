@@ -6,5 +6,11 @@ module.exports = {
     }
 
     return config
+  },
+  serverRuntimeConfig: {
+    apiBaseUrl: `http://localhost:${process.env.PORT || 3000}/api`
+  },
+  publicRuntimeConfig: {
+    apiBaseUrl: '/api'
   }
 }

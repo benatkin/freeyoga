@@ -8,20 +8,33 @@ import Grid from 'material-ui/Grid';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
 import { withStyles } from 'material-ui/styles';
-import withRoot from '../src/withRoot';
-import globalStyles from '../src/global-styles';
+import withRoot from '../lib/withRoot';
+import globalStyles from '../lib/global-styles';
 import Link from 'next/link';
 import {Link as RouteLink, Router} from '../routes';
+import fetch from 'isomorphic-unfetch';
 
 import ChapterSelect from '../components/chapter-select';
+
 import YogaEvent from '../components/yoga-event';
 
 const eventData = require('../data/events');
 const defaultChapterId = 'sf';
 
+import getConfig from 'next/config';
+const {serverRuntimeConfig, publicRuntimeConfig} = getConfig();
+
+const apiBaseUrl = serverRuntimeConfig.apiBaseUrl || publicRuntimeConfig.apiBaseUrl;
+
 class Index extends React.Component {
   static async getInitialProps(ctx) {
-    return ({chapterId: ctx.query.chapter || defaultChapterId})
+    const res = await fetch(`${apiBaseUrl}/events`)
+    console.log({res})
+    const json = await res.json()
+    return ({
+      chapterId: ctx.query.chapter || defaultChapterId,
+      events: json
+    })
   }
 
   handleChapterChange = chapterId => {
@@ -37,7 +50,16 @@ class Index extends React.Component {
   render() {
     const { classes, chapterId } = this.props;
     const chapter = eventData[chapterId];
-    const events = chapter.events.filter(event => event.featured);
+    const events = this.props.events.map(e => {
+      return {
+        date: e.local_date,
+        title: e.name,
+        time: e.local_time,
+        location: e.venue.name,
+        instructor: e.group.who,
+        url: e.link
+      }
+    });
 
     return (
       <div className={classes.root}>
