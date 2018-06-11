@@ -25,8 +25,11 @@
     "react-popper": "^0.8.3"
   },
   "scripts": {
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start"
+    "start": "NODE_ENV=production node server.js"
+  },
+  "engines": {
+    "node": "^8.11.2"
   }
 }
