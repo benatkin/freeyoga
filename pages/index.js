@@ -31,10 +31,8 @@ class Index extends React.Component {
     const apiBaseUrl = serverRuntimeConfig.apiBaseUrl
       ? `${serverBaseUrl}/api`
       : publicRuntimeConfig.apiBaseUrl;
-    console.log({apiBaseUrl})
     const res = await fetch(`${apiBaseUrl}/events`)
     const json = await res.json()
-    console.log({length: json.length, error: json.error})
     return ({
       chapterId: query.chapter || defaultChapterId,
       events: json
