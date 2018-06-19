@@ -4,6 +4,8 @@ import Nav from '../components/nav'
 
 import Reboot from 'material-ui/Reboot';
 import Grid from 'material-ui/Grid';
+import Typography from 'material-ui/Typography';
+import Importer from '../components/admin/importer'
 import { withStyles } from 'material-ui/styles';
 import withRoot from '../lib/withRoot';
 import globalStyles from '../lib/global-styles';
@@ -14,24 +16,33 @@ class Admin extends React.Component {
     this.state = {
       loading: true,
       name: null,
-      email: null
+      email: null,
+      googleClientId: null,
+      googleApiKey: null,
+      googleAppId: null,
+      error: null
     }
   }
 
   async componentDidMount() {
     this.fixUrl()
+    this.setState({
+      loading: false
+    })
+    await this.loadUser()
+  }
+
+  async loadUser() {
     try {
-      const res = await fetch('/api/admin/user', {credentials: 'include'})
-      const data = await res.json()
-      this.setState({
-        loading: false,
-        name: res.ok ? data.name : null,
-        email: res.ok ? data.email : null
-      })
+      const res = await fetch('/api/users/me', {credentials: 'include'})
+      if (!res.ok) {
+        this.setState({error: 'Error signing in.'})
+        return
+      }
+      const {name, email, googleClientId, googleApiKey, googleAppId} = await res.json()
+      this.setState({name, email, googleClientId, googleApiKey, googleAppId})
     } catch (err) {
-      this.setState({
-        loading: false
-      })
+      this.setState({error: 'Error signing in.'})
     }
   }
 
@@ -54,7 +65,13 @@ class Admin extends React.Component {
 
         <Grid container className={classes.content} spacing={0}>
           <Grid item xs={12} className={classes.aboutText}>
-            {loginStatus}
+            <Typography>{loginStatus}</Typography>
+            {this.state.name &&
+              <Importer 
+                clientId={this.state.googleClientId}
+                apiKey={this.state.googleApiKey}
+                appId={this.state.googleAppId}
+              />}
           </Grid>
         </Grid>
       </div>

@@ -24,11 +24,12 @@
     "prop-types": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "react-google-picker": "^0.0.8",
     "react-jss": "latest",
     "react-popper": "^0.8.3"
   },
   "scripts": {
-    "dev": "nodemon -w server.js -w lib/auth.js -w lib/api.js server.js",
+    "dev": "nodemon -w server.js -w lib/auth.js -w lib/api.js -w lib/models server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js"
   },

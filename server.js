@@ -20,6 +20,7 @@ app.prepare().then(() => {
     keys: [process.env.SESSION_KEY],
     maxAge: 14 * 24 * 60 * 60 * 1000
   }))
+  app.use(express.json())
 
   app.use('/api', api)
   app.use('/auth', auth)
