@@ -31,12 +31,25 @@ class Index extends React.Component {
     const apiBaseUrl = serverRuntimeConfig.apiBaseUrl
       ? `${serverBaseUrl}/api`
       : publicRuntimeConfig.apiBaseUrl;
-    const res = await fetch(`${apiBaseUrl}/events`)
-    const json = await res.json()
-    return ({
+    const chapters = await Index.getChapters(apiBaseUrl)
+    const events = await Index.getEvents(apiBaseUrl)
+    const props = {
       chapterId: query.chapter || defaultChapterId,
-      events: json
-    })
+      chapters,
+      events
+    }
+    console.log({props})
+    return props
+  }
+
+  static async getChapters(apiBaseUrl) {
+    const res = await fetch(`${apiBaseUrl}/chapters`)
+    return await res.json()
+  }
+
+  static async getEvents(apiBaseUrl) {
+    const res = await fetch(`${apiBaseUrl}/events`)
+    return await res.json()
   }
 
   handleChapterChange = chapterId => {
@@ -67,7 +80,11 @@ class Index extends React.Component {
       <div className={classes.root}>
         <Reboot />
 
-        <Nav classes={classes} chapterId={this.props.chapterId} />
+        <Nav
+          classes={classes}
+          chapterId={this.props.chapterId}
+          chapters={this.props.chapters}
+        />
         
         <header className={classes.header}>
           <div className={classes.headerContent}>

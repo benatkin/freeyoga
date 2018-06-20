@@ -126,13 +126,13 @@ class Nav extends React.Component {
                     style={{ transformOrigin: '0 0 0' }}
                   >
                     <Paper style={{ margin: 3 }}>
-                      {Object.keys(eventData).map((chapterId, index) => (
+                      {this.props.chapters.map(({City, State, Meetup}, index) => (
                         <MenuItem
-                          key={chapterId}
+                          key={`${City}, ${State}`}
                           selected={index === this.state.selectedIndex}
-                          onClick={event => this.handleMenuItemClick(event, chapterId)}
+                          onClick={event => this.handleMenuItemClick(chapter)}
                         >
-                          {eventData[chapterId].name}
+                          {`${City}, ${State}`}
                         </MenuItem>
                       ))}
                     </Paper>
